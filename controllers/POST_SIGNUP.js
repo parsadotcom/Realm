@@ -8,7 +8,7 @@ export const POST_SIGNUP = async (req, res) => {
   try {
     const success = await SignUp(req.body);
     const { username, email } = req.body;
-    res.status(201).json(successfulResponse("User signed up!", { username, token: createToken(username, email) }));
+    res.status(201).json(successfulResponse("User signed up!", { token: createToken(username, email) }));
   } catch (signUpError) {
 
     console.error(`Error[ ${signUpError.name} ]`);
