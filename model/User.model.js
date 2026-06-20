@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 export const user_schema = Joi.object({
-  username: Joi.string().alphanum().pattern(/^[a-zA-Z]*[0-9a-zA-Z]*$/).max(20).min(3).required(),
+  username: Joi.string().alphanum().pattern(/^\w*[0-9a-zA-Z_]*$/).max(20).min(3).required(),
   // id: Joi.string().alphanum().min(3).max(20).required(),
   email: Joi.string().max(100).email().required(),
   password: Joi.string().alphanum().min(8).max(15).required(), 
