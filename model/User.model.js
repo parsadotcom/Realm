@@ -8,3 +8,6 @@ export const user_schema = Joi.object({
   age: Joi.number().max(100).min(18),
   gender: Joi.string().valid("male", "female"),
 });
+
+/// User model:
+/// {username, email, password, age, gender}
