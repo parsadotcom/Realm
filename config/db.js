@@ -3,9 +3,9 @@ import { config } from "dotenv";
 import { mongoConfig } from "./mongoConfig.js"
 
 config();
-const STRING = process.env.MONGO_STRING;  
+const STRING = process.env.MONGO_STRING;
 const client = new MongoClient(STRING, mongoConfig);
-  
+
 let db;
 
 async function runDatabase(dbName) {
@@ -28,7 +28,7 @@ try {
 export async function SignUp(userData) {
   try {
     const users = db.collection("users");
-    await users.insertOne(userData);
+    await users.insertOne(orderItems(userData));
     return true;
   } catch (error) {
     return false;
@@ -39,7 +39,7 @@ export async function SignUp(userData) {
 export async function GetUser(userData) {
   try {
     const users = db.collection("users");
-    const user = await users.findOne({email: userData.email});
+    const user = await users.findOne({ email: userData.email });
     if (user) {
       return user;
     }
@@ -47,3 +47,8 @@ export async function GetUser(userData) {
     return false;
   }
 }
+
+function orderItems(items) {
+  const { username, email, age, gender, password } = items;
+  return { username, email, age, gender, password };
+} 
