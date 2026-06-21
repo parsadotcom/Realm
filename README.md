@@ -56,7 +56,9 @@ Create a `.env` file at the project root. See example below (`.env.example`) for
 
 ### Run (development)
 npm run dev
-# or
+
+or
+
 yarn dev
 
 This should start the development server with hot reload (if configured).
@@ -69,6 +71,8 @@ npm start
 Run tests:
 
 npm test
-# or
+
+or
+
 yarn test
 
