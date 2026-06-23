@@ -7,6 +7,7 @@ export const GET_HEALTH = (req, res) => {
     res.status(200).json(successfulResponse("Realm is alive🛡️"));
   } catch (healthError) {
     console.log(healthError.message);
-    res.status(400).json(failedResponse("Request is not healthy", { name: healthError.name, reason: healthError.message }));
+    res.status(500).json(failedResponse("Request is not healthy", { name: healthError.name, reason: healthError.message }));
   }
 }
+
