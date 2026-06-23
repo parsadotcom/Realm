@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-// import { config } from "dotenv"; // TODO: remove them later 
+// import { config } from "dotenv"; // ACTION: remove it later (for test purposes)
 // config();
 
 const tknconfig = { expiresIn: "1h" };
